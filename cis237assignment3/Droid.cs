@@ -42,10 +42,10 @@ namespace cis237assignment3
         }
 
         // assigns baseCost to totalCost (Required by the interface)
-        public void CalculateTotalCost()
-        {
-
-        }
+        public abstract decimal CalculateTotalCost();
+        
+  
+        
 
     }
 }
