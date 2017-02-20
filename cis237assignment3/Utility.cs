@@ -15,7 +15,8 @@ namespace cis237assignment3
         // Constructors
         public Utility() { }
 
-        public Utility(string Material, string Model, string Color, bool ToolBox, bool ComputerConnection,
+        public Utility(string Material, string Model, string Color, 
+            bool ToolBox, bool ComputerConnection,
             bool Arm) : base(Material, Model, Color)
         {
             toolBox = ToolBox;

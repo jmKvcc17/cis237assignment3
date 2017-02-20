@@ -8,6 +8,9 @@ namespace cis237assignment3
 {
     class Janitor : Utility
     {
+        // PRICES: If trash compactor, add 400m
+        //         If vacuum, add 300m
+
         // Variables
         private bool trashCompactor;
         private bool vacuum;

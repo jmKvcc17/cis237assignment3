@@ -10,7 +10,7 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
-
+            // User has three menu choices: 1. Add Droid, print droid list
         }
     }
 }

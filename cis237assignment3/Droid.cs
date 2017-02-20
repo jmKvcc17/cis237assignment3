@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    abstract class Droid
+    abstract class Droid : IDroid
     {
         // Backing Fields
         protected string material;
