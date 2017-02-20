@@ -20,6 +20,24 @@ namespace cis237assignment3
             Console.WriteLine("Option 3. Exit program");
         }
 
+        static public int GetMenuChoice()
+        {
+            string choice;
+
+            UserInterface.DisplayMenu();
+            Console.WriteLine("Enter menu choice: ");
+            choice = Console.ReadLine();
+
+            while (choice != "1" || choice != "2" || choice != "3")
+            {
+                Console.WriteLine("Invalid input. Try again.");
+                Console.WriteLine("Enter menu choice: ");
+                choice = Console.ReadLine();
+            }
+
+            return int.Parse(choice);
+        }
+
         // Input
         static public string GetModel()
         {
@@ -90,6 +108,33 @@ namespace cis237assignment3
             Choice = Console.ReadLine();
 
             if (Choice == "Y")
+                return true;
+            else
+                return false;
+
+        }
+
+        static public bool GetToolBox()
+        {
+            string toolBox;
+
+            Console.WriteLine("Do you want the droid to have a tool box? (Y/n): ");
+            toolBox = Console.ReadLine();
+
+            if (toolBox == "Y")
+                return true;
+            else
+                return false;
+        }
+
+        static public bool GetArm()
+        {
+            string Arm;
+
+            Console.WriteLine("Do you want the droid to have an arm? (Y/n): ");
+            Arm = Console.ReadLine();
+
+            if (Arm == "Y")
                 return true;
             else
                 return false;

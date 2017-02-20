@@ -10,7 +10,13 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
-            
+            // Variables
+            IDroid[] droids = new IDroid[50];
+
+            int userChoice;
+
+            userChoice = UserInterface.GetMenuChoice();
+
             
         }
     }
