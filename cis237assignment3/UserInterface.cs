@@ -61,7 +61,7 @@ namespace cis237assignment3
 
         static public int GetNumOfLanguages() // **********
         {
-            int NumberOfLanguages;
+            int NumberOfLanguages = 0;
             bool goodInput = false;
 
             Console.WriteLine("Enter in the number of languages the droid knows: ");
@@ -79,16 +79,20 @@ namespace cis237assignment3
                 }
             }
 
-
             return NumberOfLanguages;
         }
 
         static public bool GetComputerConnection()
         {
-            bool Choice;
+            string Choice;
 
-            Console.WriteLine("Do you want the droid to have a computer connection?");
+            Console.WriteLine("Do you want the droid to have a computer connection? (Y/n): ");
+            Choice = Console.ReadLine();
 
+            if (Choice == "Y")
+                return true;
+            else
+                return false;
 
         }
     }
