@@ -175,7 +175,7 @@ namespace cis237assignment3
         {
             string vacuum;
 
-            Console.WriteLine("Do you want the droid to have a trash compactor? (Y/n): ");
+            Console.WriteLine("Do you want the droid to have a vacuum? (Y/n): ");
             vacuum = Console.ReadLine();
 
             if (vacuum == "Y")

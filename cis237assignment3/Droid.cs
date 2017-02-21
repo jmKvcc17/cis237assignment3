@@ -38,7 +38,7 @@ namespace cis237assignment3
                    "Model: " + model + Environment.NewLine +
                    "Color: " + color + Environment.NewLine +
                    "Base Cost: " + baseCost.ToString("C") + Environment.NewLine +
-                   "Total Cost: " + totalCost.ToString("C") + Environment.NewLine;
+                   "Total Cost: " + totalCost.ToString("C");
         }
 
         // Determines the baseCost based on material and type. *****

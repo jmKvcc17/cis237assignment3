@@ -25,7 +25,7 @@ namespace cis237assignment3
         public override string ToString()
         {
             return base.ToString() + Environment.NewLine +
-                "Number of Languages: " + numberLanguages.ToString();
+                "Number of Languages: " + numberLanguages.ToString() + Environment.NewLine + Environment.NewLine;
         }
 
         public override void CalculateTotalCost()
