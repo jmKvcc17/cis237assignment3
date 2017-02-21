@@ -15,6 +15,12 @@ namespace cis237assignment3
         protected decimal baseCost;
         protected decimal totalCost;
 
+        public decimal TotalCost
+        {
+            get { return TotalCost; }
+            set { TotalCost = value; }
+        }
+
         // Constructors
         public Droid() {}
 

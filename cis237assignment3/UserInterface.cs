@@ -28,7 +28,7 @@ namespace cis237assignment3
             Console.WriteLine("Enter menu choice: ");
             choice = Console.ReadLine();
 
-            while (choice != "1" || choice != "2" || choice != "3")
+            while (choice != "1" && choice != "2" && choice != "3")
             {
                 Console.WriteLine("Invalid input. Try again.");
                 Console.WriteLine("Enter menu choice: ");
@@ -44,11 +44,12 @@ namespace cis237assignment3
             string Model;
 
             Console.WriteLine("There are 4 droid model types: Protocol, Utility, Astromech, and Janitor");
-            Console.WriteLine("Enter: 1. Protocol" + Environment.NewLine + "2. Utility"
+            Console.WriteLine("Enter:\n1. Protocol" + Environment.NewLine + "2. Utility"
                  + Environment.NewLine + "3. Astromech" + Environment.NewLine + "4. Janitor");
 
             Model = Console.ReadLine();
-            while (Model != "1" || Model != "2" || Model != "3" || Model != "4")
+            while (Model != "1" && Model != "2" 
+                && Model != "3" && Model != "4")
             {
                 Console.WriteLine("Input Error. Try again.");
                 Model = Console.ReadLine();
@@ -79,25 +80,29 @@ namespace cis237assignment3
 
         static public int GetNumOfLanguages() // **********
         {
-            int NumberOfLanguages = 0;
-            bool goodInput = false;
+            string NumberOfLanguages;
+            int i = 0;
+            bool notNum = false;
 
             Console.WriteLine("Enter in the number of languages the droid knows: ");
+            NumberOfLanguages = Console.ReadLine();
 
-            while(!goodInput)
+            while (!notNum)
             {
-                try
+                notNum = int.TryParse(NumberOfLanguages, out i);
+
+                if (notNum)
+                    i = int.Parse(NumberOfLanguages);
+                else
                 {
-                    int.TryParse(Console.ReadLine(), out NumberOfLanguages);
-                    goodInput = true;
+                    Console.WriteLine("Improper Input.");
+                    Console.WriteLine("Enter in the number of languages the droid knows: ");
+                    NumberOfLanguages = Console.ReadLine();
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                    
             }
 
-            return NumberOfLanguages;
+            return i;
         }
 
         static public bool GetComputerConnection()
@@ -182,20 +187,23 @@ namespace cis237assignment3
         static public int GetNumOfShips() // **********
         {
             int NumberOfShips = 0;
+            string hold;
             bool goodInput = false;
 
             Console.WriteLine("Enter in the number of ships: ");
+            hold = Console.ReadLine();
 
             while (!goodInput)
             {
-                try
+                goodInput = int.TryParse(hold, out NumberOfShips);
+
+                if (goodInput)
+                    NumberOfShips = int.Parse(hold);
+                else
                 {
-                    int.TryParse(Console.ReadLine(), out NumberOfShips);
-                    goodInput = true;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
+                    Console.WriteLine("Input Error.");
+                    Console.WriteLine("Enter in the number of ships: ");
+                    hold = Console.ReadLine();
                 }
             }
 

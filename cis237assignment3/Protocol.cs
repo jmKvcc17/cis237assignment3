@@ -24,8 +24,8 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine + // base.ToString() uses the base classes (Droid) version of ToString
-                " ";
+            return base.ToString() + Environment.NewLine +
+                "Number of Languages: " + numberLanguages.ToString();
         }
 
         public override void CalculateTotalCost()

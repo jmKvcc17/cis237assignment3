@@ -27,7 +27,18 @@ namespace cis237assignment3
                     currentIndex++;
                 }
                 else
-                    Console.WriteLine("Display droids");
+                {
+                    string outputString = "";
+                    foreach (IDroid droid in droids)
+                    {
+                        if (droid != null)
+                        {
+                            outputString += droid.ToString();
+                        }
+
+                    }
+                    Console.WriteLine(outputString);
+                }
 
                 userChoice = UserInterface.GetMenuChoice();
 

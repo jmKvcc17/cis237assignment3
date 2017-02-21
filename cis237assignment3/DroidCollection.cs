@@ -10,12 +10,6 @@ namespace cis237assignment3
     {
         public DroidCollection() { }
 
-        /*
-        public DroidCollection(IDroid[] droidCollection, string Material, string Model, string Color,
-            int NumberOfLanguages = 0, bool ToolBox = false, bool arm = false, 
-            bool computerConnection = false)
-        */
-
         // Methods 
         public void AddDroid(IDroid[] droids, int droidIndex)
         {
@@ -24,13 +18,11 @@ namespace cis237assignment3
             string material = UserInterface.GetMaterial();
             string color = UserInterface.GetColor();
 
-            
-
             // Get int inputs
-            if (model == "protocol")
+            if (model == "1")
             {
                 int numberOfLanguages = UserInterface.GetNumOfLanguages();
-                droids[droidIndex] = new Protocol(material, model, color, numberOfLanguages); // ****
+                droids[droidIndex] = new Protocol(material, "Protocol", color, numberOfLanguages); // ****
             }
             else
             {
@@ -39,43 +31,28 @@ namespace cis237assignment3
                 bool computerConnection = UserInterface.GetComputerConnection();
                 bool toolBox = UserInterface.GetToolBox();
 
-                if (model == "utility")
+                if (model == "2")
                 {
-                    droids[droidIndex] = new Utility(material, model, color, toolBox,
+                    droids[droidIndex] = new Utility(material, "Utility", color, toolBox,
                     computerConnection, arm);
                 }
-                if (model == "astromech")
+                if (model == "3")
                 {
                     bool fireExtinquisher = UserInterface.GetFireExtinquisher();
                     int numberOfShips = UserInterface.GetNumOfShips();
 
-                    droids[droidIndex] = new Astromech(material, model, color, toolBox, computerConnection, arm,
+                    droids[droidIndex] = new Astromech(material, "Astromech", color, toolBox, computerConnection, arm,
                     fireExtinquisher, numberOfShips);
                 }
-                else
+                if (model == "4")
                 {
                     bool trashCompactor = UserInterface.GetTrashCompactor();
                     bool vacuum = UserInterface.GetVacuum();
 
-                    droids[droidIndex] = new Janitor(material, model, color, toolBox,
+                    droids[droidIndex] = new Janitor(material, "Janitor", color, toolBox,
                     computerConnection, arm, trashCompactor, vacuum);
-                }
-                
-                
-                
-            }
-                
-            
-         
-            if (model == "astromech")
-            {
-                
+                }   
             }  
-            if (model == "janitor")
-            {
-                
-            }
-                
         }
     }
 }
