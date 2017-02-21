@@ -138,7 +138,68 @@ namespace cis237assignment3
                 return true;
             else
                 return false;
+        }
 
+        static public bool GetFireExtinquisher()
+        {
+            string FireExtinquisher;
+
+            Console.WriteLine("Do you want the droid to have a fire extinquisher? (Y/n): ");
+            FireExtinquisher = Console.ReadLine();
+
+            if (FireExtinquisher == "Y")
+                return true;
+            else
+                return false;
+        }
+
+        static public bool GetTrashCompactor()
+        {
+            string trashCompactor;
+
+            Console.WriteLine("Do you want the droid to have a trash compactor? (Y/n): ");
+            trashCompactor = Console.ReadLine();
+
+            if (trashCompactor == "Y")
+                return true;
+            else
+                return false;
+        }
+
+        static public bool GetVacuum()
+        {
+            string vacuum;
+
+            Console.WriteLine("Do you want the droid to have a trash compactor? (Y/n): ");
+            vacuum = Console.ReadLine();
+
+            if (vacuum == "Y")
+                return true;
+            else
+                return false;
+        }
+
+        static public int GetNumOfShips() // **********
+        {
+            int NumberOfShips = 0;
+            bool goodInput = false;
+
+            Console.WriteLine("Enter in the number of ships: ");
+
+            while (!goodInput)
+            {
+                try
+                {
+                    int.TryParse(Console.ReadLine(), out NumberOfShips);
+                    goodInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return NumberOfShips;
         }
     }
 }

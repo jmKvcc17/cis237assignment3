@@ -35,9 +35,9 @@ namespace cis237assignment3
             return "Variables";
         }
 
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
-            return 0;
+            
         }
 
     }

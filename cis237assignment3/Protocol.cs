@@ -28,9 +28,9 @@ namespace cis237assignment3
                 " ";
         }
 
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
-            return 0;
+            
         }
     }
 }
