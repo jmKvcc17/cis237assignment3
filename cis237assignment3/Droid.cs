@@ -17,8 +17,14 @@ namespace cis237assignment3
 
         public decimal TotalCost
         {
-            get { return TotalCost; }
-            set { TotalCost = value; }
+            get { return totalCost; }
+            set { totalCost = value; }
+        }
+
+        public decimal BaseCost
+        {
+            get { return baseCost; }
+            set { baseCost = value; }
         }
 
         // Constructors
@@ -34,6 +40,8 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
+            CalculateBaseCost();
+            CalculateTotalCost();
             return "Material: " + material + Environment.NewLine +
                    "Model: " + model + Environment.NewLine +
                    "Color: " + color + Environment.NewLine +
@@ -44,7 +52,42 @@ namespace cis237assignment3
         // Determines the baseCost based on material and type. *****
         public void CalculateBaseCost()
         {
+            baseCost = 0;
+            baseCost += CalculateMaterialCost(material);
+            baseCost += CalculateColorCost(color);
 
+            if (model == "Protocol")
+                baseCost += 2000m;
+            if (model == "Utility")
+                baseCost += 2500m;
+            if (model == "Astromech")
+                baseCost += 3000m;
+            if (model == "Janitor")
+                baseCost += 3500m;
+        }
+
+        // Should be three colors: red, blue, green
+        public decimal CalculateColorCost(string color)
+        {
+            if (color == "red")
+                return 50m;
+            if (color == "blue")
+                return 60m;
+            if (color == "green")
+                return 70m;
+            return 0m;
+        }
+
+        // There are 3 materials: carbonite, tanium, quadranium
+        public decimal CalculateMaterialCost(string material)
+        {
+            if (material == "carbonite")
+                return 1000m;
+            if (material == "tanium")
+                return 2000m;
+            if (material == "quadranium")
+                return 3000m;
+            return 0m;
         }
 
         // assigns baseCost to totalCost (Required by the interface)

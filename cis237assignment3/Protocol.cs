@@ -11,7 +11,7 @@ namespace cis237assignment3
 
         // Backing fields
         private int numberLanguages;
-        private const decimal costPerLanguage = 500m;
+        private const decimal COST_PER_LANGUAGE = 500m;
 
         // Constructors
         public Protocol() { }
@@ -24,13 +24,15 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
+            //CalculateTotalCost();
             return base.ToString() + Environment.NewLine +
-                "Number of Languages: " + numberLanguages.ToString() + Environment.NewLine + Environment.NewLine;
+                "Number of Languages: " + numberLanguages.ToString() + Environment.NewLine 
+                + Environment.NewLine;
         }
 
         public override void CalculateTotalCost()
         {
-            
+            base.TotalCost = (numberLanguages * COST_PER_LANGUAGE) + base.baseCost;
         }
     }
 }

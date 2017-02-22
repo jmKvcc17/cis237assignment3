@@ -27,12 +27,22 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine + Environment.NewLine;
+            return base.ToString() + Environment.NewLine + "Tool Box: " +
+                toolBox.ToString() + Environment.NewLine + "Computer Connection: "
+                 + computerConnection.ToString() + Environment.NewLine +
+                 "Arm: " + arm.ToString();
         }
 
         public override void CalculateTotalCost()
         {
+            if (toolBox)
+                base.totalCost += 50m;
+            if (computerConnection)
+                base.totalCost += 70m;
+            if (arm)
+                base.totalCost += 80m;
 
+            base.totalCost += base.baseCost;
         }
     }
 }

@@ -29,12 +29,18 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine + Environment.NewLine;
+            return base.ToString() + "Trash Compactor: " + trashCompactor.ToString() + Environment.NewLine + 
+                 "Vacuum: " + vacuum.ToString() + Environment.NewLine + Environment.NewLine;
         }
 
         public override void CalculateTotalCost()
         {
+            if (trashCompactor)
+                base.totalCost += 100m;
+            if (vacuum)
+                base.totalCost += 200m;
 
+            base.totalCost += base.baseCost;
         }
     }
 }
