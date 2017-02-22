@@ -32,12 +32,20 @@ namespace cis237assignment3
         // Methods
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine + Environment.NewLine;
+            return base.ToString() + "Fire Extinquisher: " + fireExtinquisher.ToString() + Environment.NewLine  +
+                "Number of ships: " + numberShips.ToString() + Environment.NewLine + Environment.NewLine;
         }
 
         public override void CalculateTotalCost()
         {
-            
+            base.utilityCosts = 0;
+            base.totalCost = 0;
+
+            CalculateUtilityCost();
+            if (fireExtinquisher)
+                base.totalCost += 150m;
+
+            base.totalCost += (numberShips * COST_PER_SHIP) + base.baseCost + base.UtilityCost;
         }
 
     }

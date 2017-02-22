@@ -209,5 +209,10 @@ namespace cis237assignment3
 
             return NumberOfShips;
         }
+
+        static public void IndexError()
+        {
+            Console.WriteLine("No more droids can be stored.");
+        }
     }
 }

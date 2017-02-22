@@ -11,6 +11,7 @@ namespace cis237assignment3
         protected bool toolBox;
         protected bool computerConnection;
         protected bool arm;
+        protected decimal utilityCosts;
 
         // Constructors
         public Utility() { }
@@ -24,25 +25,40 @@ namespace cis237assignment3
             arm = Arm;
         }
 
+        // Properties
+        public decimal UtilityCost
+        {
+            get { return utilityCosts; }
+            set { utilityCosts = value; }
+        }
+
         // Methods
         public override string ToString()
         {
             return base.ToString() + Environment.NewLine + "Tool Box: " +
                 toolBox.ToString() + Environment.NewLine + "Computer Connection: "
                  + computerConnection.ToString() + Environment.NewLine +
-                 "Arm: " + arm.ToString();
+                 "Arm: " + arm.ToString() + Environment.NewLine;
         }
 
         public override void CalculateTotalCost()
         {
-            if (toolBox)
-                base.totalCost += 50m;
-            if (computerConnection)
-                base.totalCost += 70m;
-            if (arm)
-                base.totalCost += 80m;
+            utilityCosts = 0;
+            base.totalCost = 0;
+            CalculateUtilityCost();
+            
 
-            base.totalCost += base.baseCost;
+            base.totalCost += base.baseCost + utilityCosts;
+        }
+
+        protected void CalculateUtilityCost()
+        {
+            if (toolBox)
+                utilityCosts += 50m;
+            if (computerConnection)
+                utilityCosts += 70m;
+            if (arm)
+                utilityCosts += 80m;
         }
     }
 }

@@ -35,12 +35,17 @@ namespace cis237assignment3
 
         public override void CalculateTotalCost()
         {
+            base.UtilityCost = 0;
+            base.totalCost = 0;
+
+            CalculateUtilityCost();
+
             if (trashCompactor)
                 base.totalCost += 100m;
             if (vacuum)
                 base.totalCost += 200m;
 
-            base.totalCost += base.baseCost;
+            base.totalCost += base.baseCost + base.UtilityCost;
         }
     }
 }
