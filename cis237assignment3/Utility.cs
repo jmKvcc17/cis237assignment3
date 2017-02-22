@@ -38,7 +38,7 @@ namespace cis237assignment3
             return base.ToString() + Environment.NewLine + "Tool Box: " +
                 toolBox.ToString() + Environment.NewLine + "Computer Connection: "
                  + computerConnection.ToString() + Environment.NewLine +
-                 "Arm: " + arm.ToString() + Environment.NewLine;
+                 "Arm: " + arm.ToString();
         }
 
         public override void CalculateTotalCost()

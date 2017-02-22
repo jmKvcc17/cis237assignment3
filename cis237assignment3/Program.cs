@@ -36,11 +36,13 @@ namespace cis237assignment3
                     {
                         if (droid != null)
                         {
-                            outputString += droid.ToString();
+                            outputString += droid.ToString()  + 
+                                Environment.NewLine + Environment.NewLine;
                         }
 
                     }
                     Console.WriteLine(outputString);
+                    
                 }
                 if (userChoice == 3)
                     Console.Clear();
