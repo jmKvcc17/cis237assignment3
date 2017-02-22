@@ -17,7 +17,8 @@ namespace cis237assignment3
             Console.WriteLine("This program allows you to add droids to a list.");
             Console.WriteLine("Option 1. Add droid to list");
             Console.WriteLine("Option 2. Display droid list");
-            Console.WriteLine("Option 3. Exit program");
+            Console.WriteLine("Option 3. Clear Screen");
+            Console.WriteLine("Option 4. Exit Program");
         }
 
         static public int GetMenuChoice()
@@ -28,7 +29,7 @@ namespace cis237assignment3
             Console.WriteLine("Enter menu choice: ");
             choice = Console.ReadLine();
 
-            while (choice != "1" && choice != "2" && choice != "3")
+            while (choice != "1" && choice != "2" && choice != "3" && choice != "4")
             {
                 Console.WriteLine("Invalid input. Try again.");
                 Console.WriteLine("Enter menu choice: ");
@@ -65,8 +66,8 @@ namespace cis237assignment3
             Console.WriteLine("Enter in material (carbonite, tanium, quadranium): ");
             Material = Console.ReadLine();
 
-            while (Material != "carbonite" && Material != "tanium" && 
-                Material != "quadranium")
+            while (Material.ToLower() != "carbonite" && Material.ToLower() != "tanium" && 
+                Material.ToLower() != "quadranium")
             {
                 Console.WriteLine("Error, enter in valid material");
                 Console.WriteLine("Enter in material (carbonite, tanium, quadranium): ");
@@ -82,6 +83,12 @@ namespace cis237assignment3
 
             Console.WriteLine("Enter in the droid color (red, green, blue): ");
             Color = Console.ReadLine();
+
+            while (Color.ToLower() != "red" && 
+                Color.ToLower() != "blue" && Color.ToLower() != "green")
+            {
+
+            }
 
             return Color;
         }

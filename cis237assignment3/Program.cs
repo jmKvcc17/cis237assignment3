@@ -16,17 +16,20 @@ namespace cis237assignment3
 
             int userChoice;
             int currentIndex = 0;
+                
 
             userChoice = UserInterface.GetMenuChoice();
+            Console.WriteLine();
 
-            while (userChoice != 3)
+            while (userChoice != 4)
             {
+
                 if (userChoice == 1)
                 {
                     DroidCollector.AddDroid(droids, currentIndex);
                     currentIndex++;
                 }
-                else
+                if (userChoice == 2)
                 {
                     string outputString = "";
                     foreach (IDroid droid in droids)
@@ -39,9 +42,10 @@ namespace cis237assignment3
                     }
                     Console.WriteLine(outputString);
                 }
+                if (userChoice == 3)
+                    Console.Clear();
 
                 userChoice = UserInterface.GetMenuChoice();
-
             }
 
             
