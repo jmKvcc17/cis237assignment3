@@ -62,8 +62,16 @@ namespace cis237assignment3
         {
             string Material;
 
-            Console.WriteLine("Enter in material: ");
+            Console.WriteLine("Enter in material (carbonite, tanium, quadranium): ");
             Material = Console.ReadLine();
+
+            while (Material != "carbonite" && Material != "tanium" && 
+                Material != "quadranium")
+            {
+                Console.WriteLine("Error, enter in valid material");
+                Console.WriteLine("Enter in material (carbonite, tanium, quadranium): ");
+                Material = Console.ReadLine();
+            }
 
             return Material;
         }
@@ -72,7 +80,7 @@ namespace cis237assignment3
         {
             string Color;
 
-            Console.WriteLine("Enter in the droid color: ");
+            Console.WriteLine("Enter in the droid color (red, green, blue): ");
             Color = Console.ReadLine();
 
             return Color;
