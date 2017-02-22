@@ -3,7 +3,7 @@
 
 ## Author
 Jesse Meachum
-
+Date: 2-22-2017
 
 ## Description
 
@@ -114,7 +114,9 @@ It may be beneficial for you to create extra methods within the droid sub classe
 | Total                      | 100    |
 
 ## Outside Resources Used
-
+dotnetperls.com
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
+When adding a new droid, the droid in the first index would have 
+the newest droids total cost added to it

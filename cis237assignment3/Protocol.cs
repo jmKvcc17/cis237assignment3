@@ -16,15 +16,16 @@ namespace cis237assignment3
         // Constructors
         public Protocol() { }
 
+        // Inherits part of constructor from droid class
         public Protocol(string Material, string Model, string Color, int NumberOfLanguages) : base(Material, Model, Color)
         {
             numberLanguages = NumberOfLanguages;
         }
 
         // Methods
+        // output the variables and costs for the droid
         public override string ToString()
         {
-            //CalculateTotalCost();
             return base.ToString() + Environment.NewLine +
                 "Number of Languages: " + numberLanguages.ToString();
         }

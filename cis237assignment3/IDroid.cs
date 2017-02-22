@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
+    // IDroid creates basic method and property for derived classes to implement
     interface IDroid
     {
         void CalculateTotalCost();

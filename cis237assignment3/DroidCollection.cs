@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
+    // Adds the droids to the droids array
     class DroidCollection
     {
         public DroidCollection() { }
@@ -18,36 +19,39 @@ namespace cis237assignment3
             string material = UserInterface.GetMaterial();
             string color = UserInterface.GetColor();
 
-            if (droidIndex < droids.Length)
+            // If the droidIndex is still within the range of the array
+            if (droidIndex < droids.Length - 1)
             {
-                // Get int inputs
+                // If it is a protocol droid
                 if (model == "1")
                 {
                     int numberOfLanguages = UserInterface.GetNumOfLanguages();
                     droids[droidIndex] = new Protocol(material, "Protocol", color, numberOfLanguages); // ****
                 }
-                else
+                else // If it is a different droid
                 {
-                    // Get bool inputs
+                    // Get bool inputs specific to utility droids
                     bool arm = UserInterface.GetArm();
                     bool computerConnection = UserInterface.GetComputerConnection();
                     bool toolBox = UserInterface.GetToolBox();
 
-                    if (model == "2")
+                    if (model == "2") // if it is a utility droid
                     {
                         droids[droidIndex] = new Utility(material, "Utility", color, toolBox,
                         computerConnection, arm);
                     }
-                    if (model == "3")
+                    if (model == "3") // if it is an astromech droid
                     {
+                        // Get inputs specific to astromech droids
                         bool fireExtinquisher = UserInterface.GetFireExtinquisher();
                         int numberOfShips = UserInterface.GetNumOfShips();
 
                         droids[droidIndex] = new Astromech(material, "Astromech", color, toolBox, computerConnection, arm,
                         fireExtinquisher, numberOfShips);
                     }
-                    if (model == "4")
+                    if (model == "4") // if it is a janitor droid
                     {
+                        // Get inputs specific to Janitor droids
                         bool trashCompactor = UserInterface.GetTrashCompactor();
                         bool vacuum = UserInterface.GetVacuum();
 
@@ -58,7 +62,7 @@ namespace cis237assignment3
             }
             else
             {
-                UserInterface.IndexError();
+                UserInterface.IndexError(); // Display error saying that the array is full
             }
         }
     }

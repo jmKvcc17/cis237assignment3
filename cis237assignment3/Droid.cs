@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    abstract class Droid : IDroid
+    abstract class Droid : IDroid // Droid inherits from the IDroid interface
     {
         // Backing Fields
         protected string material;
@@ -15,6 +15,7 @@ namespace cis237assignment3
         protected decimal baseCost;
         protected decimal totalCost;
 
+        // Properties
         public decimal TotalCost
         {
             get { return totalCost; }
@@ -30,6 +31,7 @@ namespace cis237assignment3
         // Constructors
         public Droid() {}
 
+        // Constructor accepts material, model and color
         public Droid (string Material, string Model, string Color)
         {
             material = Material;
@@ -38,10 +40,11 @@ namespace cis237assignment3
         }
 
         // Methods
+        // overrides ToString, allows the droid information to print
         public override string ToString()
         {
-            CalculateBaseCost();
-            CalculateTotalCost();
+            CalculateBaseCost(); // Finds the base cost
+            CalculateTotalCost(); // Finds the total cost
             return "Model: " + model.ToUpper() + Environment.NewLine +
                    "Material: " + material.ToUpper() + Environment.NewLine +
                    "Color: " + color.ToUpper() + Environment.NewLine +
@@ -49,13 +52,15 @@ namespace cis237assignment3
                    "Total Cost: " + totalCost.ToString("C");
         }
 
-        // Determines the baseCost based on material and type. *****
-        public void CalculateBaseCost()
+        // Determines the baseCost based on material and type
+        // and model
+        public virtual void CalculateBaseCost()
         {
-            baseCost = 0;
-            baseCost += CalculateMaterialCost(material);
-            baseCost += CalculateColorCost(color);
+            baseCost = 0; // reset the baseCost for new droid
+            baseCost += CalculateMaterialCost(material); // calculates the cost for material
+            baseCost += CalculateColorCost(color); // calculates the cost for color
 
+            // Determine the model used
             if (model == "Protocol")
                 baseCost += 2000m;
             if (model == "Utility")
@@ -67,6 +72,7 @@ namespace cis237assignment3
         }
 
         // Should be three colors: red, blue, green
+        // returns price depending on color chosen
         public decimal CalculateColorCost(string color)
         {
             if (color == "red")

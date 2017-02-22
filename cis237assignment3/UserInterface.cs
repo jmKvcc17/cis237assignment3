@@ -11,16 +11,23 @@ namespace cis237assignment3
         // Input for: material, model, color, numberOfLanguages (Protocol)
         // for utility: tool box, computer connection, arm (all bools)
 
-        // Menu
+        // Menu instructions
         static public void DisplayMenu()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen; // Changes console color
             Console.WriteLine("This program allows you to add droids to a list.");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Option 1. Add droid to list");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("Option 2. Display droid list");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Option 3. Clear Screen");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Option 4. Exit Program");
+            Console.ResetColor();
         }
 
+        // Get the menu choice from the user
         static public int GetMenuChoice()
         {
             string choice;
@@ -39,14 +46,16 @@ namespace cis237assignment3
             return int.Parse(choice);
         }
 
-        // Input
+        // Gets the droid model from the user
         static public string GetModel()
         {
             string Model;
 
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("There are 4 droid model types: Protocol, Utility, Astromech, and Janitor");
             Console.WriteLine("Enter:\n1. Protocol" + Environment.NewLine + "2. Utility"
                  + Environment.NewLine + "3. Astromech" + Environment.NewLine + "4. Janitor");
+            Console.ResetColor();
 
             Model = Console.ReadLine();
             while (Model != "1" && Model != "2" 
@@ -59,6 +68,7 @@ namespace cis237assignment3
             return Model;
         }
 
+        // Gets the droid material from the user
         static public string GetMaterial()
         {
             string Material;
@@ -77,6 +87,7 @@ namespace cis237assignment3
             return Material;
         }
 
+        // Gets the droid color from the user
         static public string GetColor()
         {
             string Color;
@@ -87,12 +98,15 @@ namespace cis237assignment3
             while (Color.ToLower() != "red" && 
                 Color.ToLower() != "blue" && Color.ToLower() != "green")
             {
-
+                Console.WriteLine("Invalid color.");
+                Console.WriteLine("Enter in the droid color (red, green, blue): ");
+                Color = Console.ReadLine();
             }
 
             return Color;
         }
 
+        // Get the number of languages from the user
         static public int GetNumOfLanguages() // **********
         {
             string NumberOfLanguages;
@@ -120,6 +134,7 @@ namespace cis237assignment3
             return i;
         }
 
+        // Get whether the user wants a computer connection
         static public bool GetComputerConnection()
         {
             string Choice;
@@ -134,6 +149,7 @@ namespace cis237assignment3
 
         }
 
+        // Get whether the user wants a toolbox
         static public bool GetToolBox()
         {
             string toolBox;
@@ -147,6 +163,7 @@ namespace cis237assignment3
                 return false;
         }
 
+        // Get whether the user wants an arm for the droid
         static public bool GetArm()
         {
             string Arm;
@@ -160,6 +177,7 @@ namespace cis237assignment3
                 return false;
         }
 
+        // Get whether the user wants a fire extinquisher
         static public bool GetFireExtinquisher()
         {
             string FireExtinquisher;
@@ -173,6 +191,7 @@ namespace cis237assignment3
                 return false;
         }
 
+        // Get whether the user wants a trash compactor
         static public bool GetTrashCompactor()
         {
             string trashCompactor;
@@ -186,6 +205,7 @@ namespace cis237assignment3
                 return false;
         }
 
+        // Get whether the user wants a vacuum
         static public bool GetVacuum()
         {
             string vacuum;
@@ -199,6 +219,7 @@ namespace cis237assignment3
                 return false;
         }
 
+        // Gets the number of ships the user wants for the droid
         static public int GetNumOfShips() // **********
         {
             int NumberOfShips = 0;
@@ -225,6 +246,7 @@ namespace cis237assignment3
             return NumberOfShips;
         }
 
+        // Prints an error when the droids array is full
         static public void IndexError()
         {
             Console.WriteLine("No more droids can be stored.");

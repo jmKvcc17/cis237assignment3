@@ -9,9 +9,6 @@ namespace cis237assignment3
     class Astromech : Utility
     {
         // PRICES: numberOfShips: number input * 500m
-        // If fire extinquisher, add 1000m
-
-
         // Variables
         private bool fireExtinquisher;
         private int numberShips;
@@ -30,6 +27,7 @@ namespace cis237assignment3
         }
 
         // Methods
+        // Print out the variables and cost for the astromech droid
         public override string ToString()
         {
             return base.ToString() + "Fire Extinquisher: " + fireExtinquisher.ToString() + Environment.NewLine +
@@ -41,11 +39,12 @@ namespace cis237assignment3
             base.utilityCosts = 0;
             base.totalCost = 0;
 
-            CalculateUtilityCost();
+            CalculateUtilityCost(); // gets the utility costs
             if (fireExtinquisher)
                 base.totalCost += 150m;
 
-            base.totalCost += (numberShips * COST_PER_SHIP) + base.baseCost + base.UtilityCost;
+            base.totalCost += (numberShips * COST_PER_SHIP) + base.baseCost + base.UtilityCost; // add the base, utility and 
+            // astromech costs to totalCost
         }
 
     }
